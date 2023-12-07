@@ -1,0 +1,19 @@
+h1 {
+  color: rgb(195, 20, 78);
+}
+#tabellone-tombola {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cell {
+  border: 1px solid black;
+  width: 5em;
+  height: 5em;
+  display: inline-block;
+  text-align: center;
+}
+
+.luckyCell {
+  background-color: red;
+}
