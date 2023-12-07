@@ -29,6 +29,7 @@ const myLuckyNumber = function (x) {
   const allCells = document.getElementsByClassName("cell");
   for (let i = 0; i < allCells.length; i++) {
     if (x == allCells[i].innerText) {
+      allCells[i].classList.add("luckyCell");
     }
   }
 };
