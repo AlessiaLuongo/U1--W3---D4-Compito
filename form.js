@@ -17,8 +17,26 @@ pushTheButton.addEventListener("click", function () {
   extractNumber();
 });
 
+let alreadyChosen = [];
+
 const extractNumber = function () {
-  const myNumber = Math.ceil(Math.random() * 76);
+  if (alreadyChosen.length === 76) {
+    alreadyChosen = [];
+    const allCells = document.getElementsByClassName("cell");
+    for (let i = 0; i < allCells.length; i++) {
+      allCells[i].classList.remove("luckyCell");
+    }
+  }
+  let x = true;
+  let myNumber = 0;
+  while (x) {
+    myNumber = Math.ceil(Math.random() * 76);
+    if (!alreadyChosen.includes(myNumber)) {
+      x = false;
+    }
+  }
+  alreadyChosen.push(myNumber);
+
   const myResultSpan = document.querySelector("span");
   myResultSpan.innerText = myNumber;
 
